@@ -1,0 +1,8 @@
+easyspring.iml
+service.iml
+target/
+.idea/
+/.idea
+/logs
+web/META-INF
+/test-output
