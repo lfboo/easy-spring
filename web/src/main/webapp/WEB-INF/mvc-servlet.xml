@@ -7,7 +7,7 @@
     <!-- 自动注册RequestMappingHandlerMapping和RequestMappingHandlerAdapter两个Bean, 这是为Controller分发请求所必需的 -->
     <mvc:annotation-driven />
 
-    <!-- 注册一些BeanPostProcessor, 使相应的注解起作用，@Autowired  @Resource @PostConstruct -->
+    <!-- 注册一些BeanPostProcessor, 使相应的注解起作用，@Autowired  @Resource @PostConstruct，自动注册Bean -->
     <context:component-scan base-package="com.lfboo.demo.controller" />
 
     <import resource="classpath*:applicationContext.xml"/>
