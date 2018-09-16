@@ -7,10 +7,10 @@
         </layout>
     </appender>
 
-    <logger name="org.springframework" level="DEBUG"/>
+    <logger name="org.springframework" level="${log.level}"/>
 
 
-    <root level="debug">
+    <root level="${log.level}">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
