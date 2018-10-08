@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lfboo.demo.dao.mapper.MLotteryMapper">
+    <resultMap id="BaseResultMap" type="com.lfboo.demo.dao.entity.MLottery">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="probability" javaType="com.lfboo.demo.common.dto.Probability" jdbcType="VARCHAR" property="probabilities" typeHandler="com.lfboo.demo.dao.typehandler.ProbabilityTypeHandler"/>
+        <result column="create_time" jdbcType="BIGINT" property="createTime"/>
+        <result column="update_time" jdbcType="BIGINT" property="updateTime"/>
+    </resultMap>
+
+    <sql id="BASE_COLUMN">
+        id, name, probability, create_time, update_time
+    </sql>
+
+    <insert id="insert" parameterType="com.lfboo.demo.dao.entity.MLottery">
+        insert into
+          m_lottery (name, probability, create_time, update_time)
+        values (
+          #{name},
+          #{probabilities, jdbcType=VARCHAR, typeHandler=com.lfboo.demo.dao.typehandler.ProbabilityTypeHandler},
+          #{createTime},
+          #{updateTime}
+        )
+    </insert>
+
+    <select id="getById" resultMap="BaseResultMap">
+        select
+          <include refid="BASE_COLUMN"/>
+        from
+          m_lottery
+        where
+          id = #{id}
+    </select>
+
+</mapper>

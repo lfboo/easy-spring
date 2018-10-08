@@ -32,6 +32,11 @@
                 <property name="logImpl" value="org.apache.ibatis.logging.stdout.StdOutImpl"/>
             </bean>
         </property>
+        <property name="typeHandlers">
+            <array>
+                <bean class="com.lfboo.demo.dao.typehandler.ProbabilityTypeHandler"/>
+            </array>
+        </property>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
