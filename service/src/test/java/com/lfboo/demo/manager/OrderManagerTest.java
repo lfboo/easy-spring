@@ -4,7 +4,6 @@ import com.lfboo.demo.BaseTest;
 import com.lfboo.demo.dto.OrderDTO;
 import com.lfboo.demo.service.MUserService;
 import org.mockito.Mock;
-import org.springframework.aop.support.AopUtils;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -34,7 +33,7 @@ public class OrderManagerTest extends BaseTest {
 
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setUserId(1L);
-        Long now = System.currentTimeMillis();
+        Long now = System.currentTimeMillis()/1000;
         orderDTO.setCreateTime(now);
         orderDTO.setUpdateTime(now);
         orderDTO.setDeleted(false);

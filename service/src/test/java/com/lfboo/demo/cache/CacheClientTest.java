@@ -1,6 +1,7 @@
 package com.lfboo.demo.cache;
 
 import com.lfboo.demo.BaseTest;
+import com.lfboo.demo.annotation.NeedLog;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -31,6 +32,7 @@ public class CacheClientTest extends BaseTest {
         CACHE_DATA.put("age", 30);
     }
 
+    @NeedLog
     @Test
     public void testSetAndGet() {
         cacheClient.set(CACHE_KEY, CACHE_DATA, CACHE_TIME);

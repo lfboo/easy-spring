@@ -10,6 +10,19 @@
 
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
+    <bean id="beanNameAutoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>logInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
     <import resource="classpath:database.xml"/>
     <import resource="cache.xml"/>
 

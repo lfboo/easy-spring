@@ -1,5 +1,6 @@
 package com.lfboo.demo.manager;
 
+import com.lfboo.demo.annotation.NeedLog;
 import com.lfboo.demo.dto.OrderDTO;
 
 /**
@@ -9,6 +10,7 @@ import com.lfboo.demo.dto.OrderDTO;
  */
 public interface OrderManager {
 
+    @NeedLog
     boolean addOrder(OrderDTO orderDTO);
 
 }
