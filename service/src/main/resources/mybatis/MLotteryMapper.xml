@@ -33,4 +33,12 @@
           id = #{id}
     </select>
 
+    <update id="updateProbabilityById">
+        UPDATE
+          m_lottery
+        set probability = #{probabilities, jdbcType=VARCHAR, typeHandler=com.lfboo.demo.dao.typehandler.ProbabilityTypeHandler}
+        where
+          id = #{id}
+    </update>
+
 </mapper>

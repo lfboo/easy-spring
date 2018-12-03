@@ -47,4 +47,15 @@ public class MLotteryMapperTest extends BaseTest {
         MLottery mLottery = mLotteryMapper.getById(1L);
         Assert.assertTrue(null != mLottery);
     }
+
+    @Test
+    public void testUpdateProbabilityById() {
+        List<Probability> probabilities = Lists.newArrayList();
+        Probability probability1 = new Probability(BigDecimal.valueOf(0.2),BigDecimal.valueOf(0.5),70);
+        Probability probability2 = new Probability(BigDecimal.valueOf(0.6),BigDecimal.valueOf(1),30);
+        probabilities.add(probability1);
+        probabilities.add(probability2);
+        boolean res = mLotteryMapper.updateProbabilityById(1L, probabilities);
+        Assert.assertTrue(res);
+    }
 }
